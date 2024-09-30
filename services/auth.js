@@ -3,7 +3,7 @@ import 'react-native-get-random-values'; // Si vous avez besoin d'utiliser `uuid
 import { v4 as uuidv4 } from 'uuid'; // Bibliothèque pour générer des UUID dans React Native
 
 
-export const signUp = async (email, password, nom, prenom, telephone) => {
+export const signUp = async (email, password, nom, prenom, telephone, role) => {
     try {
         // Vérification du rôle
         if (role !== 'customer' && role !== 'restaurant') {
@@ -30,6 +30,7 @@ export const signUp = async (email, password, nom, prenom, telephone) => {
                     nom: nom,
                     prenom: prenom,
                     telephone: telephone,
+                    role: role, // Ajouter le rôle dans la table `users`
                 },
             ]);
 
@@ -41,6 +42,7 @@ export const signUp = async (email, password, nom, prenom, telephone) => {
         throw error;
     }
 };
+
 
 
 export const signIn = async (email, password) => {
