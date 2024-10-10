@@ -2,8 +2,23 @@ import { View, Text, StyleSheet, StatusBar,TextInput } from "react-native";
 import React from "react";
 import Icon from 'react-native-vector-icons/Ionicons';
 import Search from "../components/search";
-
+import Categories from "../components/Categories";
 const HomeSreen = () => {
+
+
+  const categories = [
+    { name: 'Locale', icon: 'pizza-outline',  },
+    { name: 'Fast Food', icon: 'fast-food-outline' },
+    { name: 'Salade', icon: 'leaf-outline' },
+    { name: 'Glasse', icon: 'ice-cream-outline' },
+    { name: 'Boissons', icon: 'beer-outline' }
+  ];
+
+  const handleCategoryPress = (category) => {
+    console.log(`Category pressed: ${category}`);
+  };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.head}>
@@ -14,10 +29,14 @@ const HomeSreen = () => {
         <Icon  name="cog" size={40} color={'black'} style={styles.cog} />
       </View>
       <Search />
-     
+      <View style={styles.cat}>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', padding: 10 }}>Catégories :</Text>
+      <Categories categories={categories} onCategoryPress={handleCategoryPress} />
+      </View>
     </View>
   );
 };
+
 
 
 const styles = StyleSheet.create({
@@ -41,6 +60,10 @@ const styles = StyleSheet.create({
   man:{
     position: 'relative',
     right: 20,
+  },
+  cat:{
+    position:'relative',
+    top: 200,
   },
   // bar: {
   //   position:'absolute',

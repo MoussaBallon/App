@@ -21,7 +21,7 @@ const TabBar = () => {
           } else if (route.name === 'Panier') {
             iconName = focused ? 'cart' : 'cart-outline';
           } else if (route.name === 'Restaurants') {
-            iconName = focused ? 'restaurant' : 'restaurant-outline';
+            iconName = focused ? 'storefront' : 'storefront-outline';
           } else if (route.name === 'Favories') {
             iconName = focused ? 'bookmark' : 'bookmark-outline';
           }

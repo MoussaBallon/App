@@ -1530,10 +1530,10 @@
   dependencies:
     cross-spawn "^7.0.3"
 
-"@expo/vector-icons@^14.0.3":
-  version "14.0.3"
-  resolved "https://registry.npmjs.org/@expo/vector-icons/-/vector-icons-14.0.3.tgz"
-  integrity sha512-UJAKOXPPi6ez/1QZfoFVopCH3+c12Sw+T+IIVkvONCEN7zjN1fLxxWHkZ7Spz4WO5EH2ObtaJfCe/k4rw+ftxA==
+"@expo/vector-icons@^14.0.3", "@expo/vector-icons@^14.0.4":
+  version "14.0.4"
+  resolved "https://registry.npmjs.org/@expo/vector-icons/-/vector-icons-14.0.4.tgz"
+  integrity sha512-+yKshcbpDfbV4zoXOgHxCwh7lkE9VVTT5T03OUlBsqfze1PLy6Hi4jp1vSb1GVbY6eskvMIivGVc9SKzIv0oEQ==
   dependencies:
     prop-types "^15.8.1"
 
@@ -1830,6 +1830,22 @@
     serve-static "^1.13.1"
     ws "^6.2.2"
 
+"@react-native-community/cli-tools@^14.1.1":
+  version "14.1.1"
+  resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-14.1.1.tgz"
+  integrity sha512-6wh4kFs0cb/76UKoBtas1ydyIoRETZ3BmzuFUgQCDuAIJ9TT8zLYgCJfqpAddx8yPCXvlxQT3btrvqgaXlwCOg==
+  dependencies:
+    appdirsjs "^1.2.4"
+    chalk "^4.1.2"
+    execa "^5.0.0"
+    find-up "^5.0.0"
+    mime "^2.4.1"
+    open "^6.2.0"
+    ora "^5.4.1"
+    semver "^7.5.2"
+    shell-quote "^1.7.3"
+    sudo-prompt "^9.0.0"
+
 "@react-native-community/cli-tools@13.6.9":
   version "13.6.9"
   resolved "https://registry.npmjs.org/@react-native-community/cli-tools/-/cli-tools-13.6.9.tgz"
@@ -1881,6 +1897,22 @@
   version "2.8.1"
   resolved "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.8.1.tgz"
   integrity sha512-iFhsKQzRh/z3GlmvJWSjJJ4333FdLE/PhXxlGlYllE7sFf+UTzziVY+ajatuJ+R5zDw2AxfJV4v/3tAzUJb0/A==
+
+"@react-native-vector-icons/common@^0.0.1-alpha.24":
+  version "0.0.1-alpha.24"
+  resolved "https://registry.npmjs.org/@react-native-vector-icons/common/-/common-0.0.1-alpha.24.tgz"
+  integrity sha512-p8lxBSVQzgw3rbfx19VHIbciK1e32G8uOImPJile5lw8abVxnYY+dNL+11NsCemD54Svlb/Lb1Qw1hLlw+F5mQ==
+  dependencies:
+    "@react-native-community/cli-tools" "^14.1.1"
+    picocolors "^1.1.0"
+    plist "^3.1.0"
+
+"@react-native-vector-icons/material-icons@^0.0.1-alpha.29":
+  version "0.0.1-alpha.29"
+  resolved "https://registry.npmjs.org/@react-native-vector-icons/material-icons/-/material-icons-0.0.1-alpha.29.tgz"
+  integrity sha512-uTzSY4tDfmZAzKPpQfm5YO5e+SxccKeouLiroSPX3yYM0lpAhnuqCwDcM09n7SGUTXeMYH/dXv3CHxJ7Ajm/Rg==
+  dependencies:
+    "@react-native-vector-icons/common" "^0.0.1-alpha.24"
 
 "@react-native/assets-registry@0.74.87":
   version "0.74.87"
@@ -4953,6 +4985,11 @@ marky@^1.2.2:
   resolved "https://registry.npmjs.org/marky/-/marky-1.2.5.tgz"
   integrity sha512-q9JtQJKjpsVxCRVgQ+WapguSbKC3SQ5HEzFGPAJMStgh3QjCawp00UKv3MTTAArTmGmmPUvllHZoNbZ3gs0I+Q==
 
+material-icons@^1.13.12:
+  version "1.13.12"
+  resolved "https://registry.npmjs.org/material-icons/-/material-icons-1.13.12.tgz"
+  integrity sha512-/2YoaB79IjUK2B2JB+vIXXYGtBfHb/XG66LvoKVM5ykHW7yfrV5SP6d7KLX6iijY6/G9GqwgtPQ/sbhFnOURVA==
+
 md5-file@^3.2.3:
   version "3.2.3"
   resolved "https://registry.npmjs.org/md5-file/-/md5-file-3.2.3.tgz"
@@ -5777,7 +5814,7 @@ pkg-dir@^3.0.0:
   dependencies:
     find-up "^3.0.0"
 
-plist@^3.0.5:
+plist@^3.0.5, plist@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/plist/-/plist-3.1.0.tgz"
   integrity sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ==
@@ -6795,12 +6832,7 @@ sudo-prompt@^8.2.0:
   resolved "https://registry.npmjs.org/sudo-prompt/-/sudo-prompt-8.2.5.tgz"
   integrity sha512-rlBo3HU/1zAJUrkY6jNxDOC9eVYliG6nS4JA8u8KAshITd07tafMc/Br7xQwCSseXwJ2iCcHCE8SNWX3q8Z+kw==
 
-sudo-prompt@^9.0.0:
-  version "9.2.1"
-  resolved "https://registry.npmjs.org/sudo-prompt/-/sudo-prompt-9.2.1.tgz"
-  integrity sha512-Mu7R0g4ig9TUuGSxJavny5Rv0egCEtpZRNMrZaYS1vxkiIxGiGUwoezU3LazIQ+KE04hTrTfNPgxU5gzi7F5Pw==
-
-sudo-prompt@9.1.1:
+sudo-prompt@^9.0.0, sudo-prompt@9.1.1:
   version "9.1.1"
   resolved "https://registry.npmjs.org/sudo-prompt/-/sudo-prompt-9.1.1.tgz"
   integrity sha512-es33J1g2HjMpyAhz8lOR+ICmXXAqTuKbuXuUWLhOLew20oN9oUCgCJx615U/v7aioZg7IX5lIh9x34vwneu4pA==
