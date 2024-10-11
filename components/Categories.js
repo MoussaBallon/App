@@ -5,6 +5,7 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from "react-native";
 // import { ScrollView } from 'react-native-gesture-handler';
 import Icon from "react-native-vector-icons/Ionicons";
@@ -22,12 +23,7 @@ const Categories = ({ categories, onCategoryPress }) => {
           onPress={() => onCategoryPress(category.name)}
         >
           <View style={styles.categoryContainer}>
-            <Icon
-              name={category.icon}
-              size={35}
-              color="#000"
-              style={styles.icon}
-            />
+            <Image source={category.image} style={styles.image} />
             <Text style={styles.categoryText}>{category.name}</Text>
           </View>
         </TouchableOpacity>
@@ -41,11 +37,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   categoryContainer: {
-    backgroundColor: "#f8f8f8",
+    // backgroundColor: "#f8f8f8",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 50,
     zIndex: 1,
-    marginRight: 10,
+    marginRight: 6,
     borderWidth: 1,
     borderColor: "#ff4040",
     alignItems: "center",
@@ -60,12 +56,13 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   categoryText: {
-    fontSize: 16,
+    fontSize: 13,
     fontWeight: "bold",
     marginTop: 5, // Espace entre l'icône et le texte
   },
-  icon: {
-    marginBottom: 5, // Ajuster l'espace autour de l'icône
+  image: {
+    width: 40,
+    height: 40,
   },
 });
 

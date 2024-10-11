@@ -10,18 +10,19 @@ import React from "react";
 import Tete from "../components/Tete";
 import Icon from "react-native-vector-icons/Ionicons";
 import RestoLIst from "../components/RestoLIst";
+import Categories from "../components/Categories";
 
-// const restos = [
-//   { name: "Locale", icon: "pizza-outline" },
-//   { name: "Fast Food", icon: "fast-food-outline" },
-//   { name: "Salade", icon: "leaf-outline" },
-//   { name: "Glasse", icon: "ice-cream-outline" },
-//   { name: "Boissons", icon: "beer-outline" },
-// ];
+const categories = [
+  { name: "Locale", image: require("../assets/images/rice.png") },
+  { name: "Fast Food", image: require("../assets/images/burgur.png") },
+  { name: "Salade", image: require("../assets/images/Salade.png") },
+  { name: "Glasse", image: require("../assets/images/Ice.png") },
+  { name: "Boissons", image: require("../assets/images/drink.png") },
+];
 
-// const handleRestoPress = (resto) => {
-//   console.log(`Category pressed: ${resto}`);
-// };
+const handleCategoryPress = (resto) => {
+  console.log(`Category pressed: ${resto}`);
+};
 
 const RestaurantSreen = () => {
   return (
@@ -33,6 +34,12 @@ const RestaurantSreen = () => {
         color={"white"}
         style={styles.restologo}
       />
+      <View style={styles.barcat}>
+        <Categories
+          categories={categories}
+          onCategoryPress={handleCategoryPress}
+        />
+      </View>
       <RestoLIst />
     </View>
   );
@@ -73,10 +80,14 @@ const styles = StyleSheet.create({
     position: "relative",
     right: 20,
   },
-  restolist: {
+  barcat: {
     position: "relative",
-    top: 250,
+    top: 120,
   },
+  // restolist: {
+  //   position: "relative",
+  //   top: 250,
+  // },
   // bar: {
   //   position:'absolute',
   //   top: 110,

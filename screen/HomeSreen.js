@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, StatusBar, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TextInput,
+  Image,
+} from "react-native";
 import React from "react";
 import Categories from "../components/Categories";
 import Tete from "../components/Tete";
@@ -8,11 +15,11 @@ import HomeMain from "../components/HomeMain";
 
 const HomeSreen = () => {
   const categories = [
-    { name: "Locale", icon: "pizza-outline" },
-    { name: "Fast Food", icon: "fast-food-outline" },
-    { name: "Salade", icon: "leaf-outline" },
-    { name: "Glasse", icon: "ice-cream-outline" },
-    { name: "Boissons", icon: "beer-outline" },
+    { name: "Locale", image: require("../assets/images/rice.png") },
+    { name: "Fast Food", image: require("../assets/images/burgur.png") },
+    { name: "Salade", image: require("../assets/images/Salade.png") },
+    { name: "Glasse", image: require("../assets/images/Ice.png") },
+    { name: "Boissons", image: require("../assets/images/drink.png") },
   ];
 
   const handleCategoryPress = (category) => {
@@ -23,9 +30,6 @@ const HomeSreen = () => {
     <View>
       <Tete />
       <View style={styles.cat}>
-        <Text style={{ fontSize: 20, fontWeight: "bold", padding: 10 }}>
-          Catégories :
-        </Text>
         <Categories
           categories={categories}
           onCategoryPress={handleCategoryPress}
