@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 50,
     zIndex: 1,
-    marginRight: 6,
+    marginRight: 15,
     borderWidth: 1,
     borderColor: "#ff4040",
     alignItems: "center",
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   categoryText: {
-    fontSize: 13,
-    fontWeight: "bold",
+    fontSize: 11,
+    // fontWeight: "bold",
     marginTop: 5, // Espace entre l'icône et le texte
   },
   image: {
