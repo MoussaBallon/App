@@ -5,12 +5,13 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 // import Icon from "react-native-vector-icons/Ionicons";
 import Icon from "@expo/vector-icons/Ionicons";
 
-const restaurants = [
+const restaurantsData = [
   {
     name: "Ryan",
     image: "https://example.com/pizza-palace.jpg",
@@ -40,11 +41,55 @@ const restaurants = [
     distance: "1.8 km",
   },
 ];
+
 const height_proportion = "80%";
 
 const RestoLIst = () => {
+  const [restaurants, setRestaurants] = useState(restaurantsData); // Données initiales
+  const [loading, setLoading] = useState(false); // Gérer l'état de chargement
+
+  // Fonction pour simuler le chargement de plus de données
+  const loadMoreRestaurants = () => {
+    if (!loading) {
+      setLoading(true);
+      setTimeout(() => {
+        const newRestaurants = [
+          {
+            name: "New Restaurant 1",
+            image: "https://example.com/new-restaurant-1.jpg",
+            description: "New delicious food.",
+            location: "Kalaban Coro",
+            distance: "2.0 km",
+          },
+          {
+            name: "New Restaurant 2",
+            image: "https://example.com/new-restaurant-2.jpg",
+            description: "Another great place to eat.",
+            location: "ACI 2000",
+            distance: "1.5 km",
+          },
+        ];
+        setRestaurants([...restaurants, ...newRestaurants]); // Ajouter les nouvelles données
+        setLoading(false); // Terminer le chargement
+      }, 1000); // Simuler une attente de 1,5 seconde
+    }
+  };
+
+  // Fonction pour détecter quand on atteint la fin du ScrollView
+  const handleScroll = ({ nativeEvent }) => {
+    const { layoutMeasurement, contentOffset, contentSize } = nativeEvent;
+    const isCloseToBottom =
+      layoutMeasurement.height + contentOffset.y >= contentSize.height - 20;
+
+    if (isCloseToBottom) {
+      loadMoreRestaurants(); // Charger plus de restaurants
+    }
+  };
+
   return (
     <ScrollView
+      onScroll={handleScroll}
+      scrollEventThrottle={16} // Contrôle la fréquence des événements de défilement
       vertical
       showsVerticalScrollIndicator={false}
       style={styles.scrollView}
@@ -71,6 +116,13 @@ const RestoLIst = () => {
           </View>
         </View>
       ))}
+      {/* Indicateur de chargement à la fin */}
+      {loading && (
+        <View style={styles.loaderContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
+      <View style={styles.footerSpace} />
     </ScrollView>
   );
 };
@@ -82,6 +134,9 @@ const styles = StyleSheet.create({
     top: 120,
     height: height_proportion,
     marginBottom: 50,
+  },
+  footerSpace: {
+    height: 300, // ajuster selon la quantité d'espace souhaitée
   },
   iconRow: {
     flexDirection: "row",
@@ -96,6 +151,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 3,
+  },
+  loaderContainer: {
+    marginVertical: 10,
+    alignItems: "center",
   },
   restaurantImage: {
     width: "100%",

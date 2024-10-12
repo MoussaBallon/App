@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, StatusBar, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  TextInput,
+  Image,
+} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import Search from "../components/search";
 import React from "react";
@@ -7,13 +14,11 @@ const Tete = () => {
   return (
     <View style={styles.head}>
       <View>
-        <Icon
-          name="person-circle"
-          size={40}
-          color={"black"}
-          style={styles.person}
+        <Image
+          style={styles.profil}
+          source={require("../assets/images/copy.jpg")}
         />
-        <Text style={styles.man}>User Name </Text>
+        <Text style={styles.man}>A. Samake </Text>
       </View>
       <Icon name="cog" size={40} color={"black"} style={styles.cog} />
       <Search />
@@ -35,7 +40,7 @@ const styles = StyleSheet.create({
     width: 400,
     flexDirection: "row",
     // paddingBottom: 10,
-    backgroundColor: "#ff4040",
+    backgroundColor: "#FFA510",
   },
   cog: {
     position: "relative",
@@ -46,6 +51,14 @@ const styles = StyleSheet.create({
     position: "relative",
     top: 70,
     left: 30,
+  },
+  profil: {
+    position: "relative",
+    top: 70,
+    left: 30,
+    width: 40,
+    height: 40,
+    borderRadius: 50,
   },
   man: {
     position: "relative",

@@ -12,6 +12,7 @@ import Tete from "../components/Tete";
 import { Header } from "react-native/Libraries/NewAppScreen";
 import RestoLIst from "../components/RestoLIst";
 import HomeMain from "../components/HomeMain";
+import SeparationLine from "../components/SeparationLine";
 
 const HomeSreen = () => {
   const categories = [
@@ -34,7 +35,9 @@ const HomeSreen = () => {
           categories={categories}
           onCategoryPress={handleCategoryPress}
         />
+        <SeparationLine style={styles.sep} />
       </View>
+
       <HomeMain />
     </View>
   );
@@ -57,6 +60,11 @@ const styles = StyleSheet.create({
     top: 74,
     left: 245,
   },
+  // pub custom
+  pub: {
+    paddingVertical: 10,
+  },
+
   person: {
     position: "relative",
     top: 70,
@@ -72,6 +80,7 @@ const styles = StyleSheet.create({
     position: "relative",
     top: 200,
   },
+
   // bar: {
   //   position:'absolute',
   //   top: 110,

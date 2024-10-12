@@ -24,8 +24,8 @@ const Categories = ({ categories, onCategoryPress }) => {
         >
           <View style={styles.categoryContainer}>
             <Image source={category.image} style={styles.image} />
-            <Text style={styles.categoryText}>{category.name}</Text>
           </View>
+          <Text style={styles.categoryText}>{category.name}</Text>
         </TouchableOpacity>
       ))}
     </ScrollView>
@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     // backgroundColor: "#f8f8f8",
-    padding: 10,
-    borderRadius: 50,
-    zIndex: 1,
+    padding: 11,
+    borderRadius: 70,
     marginRight: 15,
-    borderWidth: 1,
-    borderColor: "#ff4040",
+    // borderWidth: 1,
+    // borderColor: "#ff4040",
+    backgroundColor: "rgba(128, 128, 128, 0.1)",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column", // Pour avoir l'icône au-dessus du texte
@@ -56,9 +56,10 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   categoryText: {
-    fontSize: 11,
+    fontSize: 12,
     // fontWeight: "bold",
     marginTop: 5, // Espace entre l'icône et le texte
+    marginHorizontal: 9,
   },
   image: {
     width: 40,

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: 100,
     width: "100%",
-    backgroundColor: "#ff4040",
+    backgroundColor: "#FFA510",
   },
   textO: {
     position: "relative",
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     left: 150,
     fontSize: 18,
     fontWeight: "bold",
+    color: "white",
   },
   backButton: {
     position: "absolute",

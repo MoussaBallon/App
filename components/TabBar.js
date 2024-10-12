@@ -28,14 +28,14 @@ const TabBar = () => {
           return <Icon name={iconName} size={iconSize} color={color} />;
         },
         tabBarActiveTintColor: "white",
-        tabBarInactiveTintColor: "black",
+        tabBarInactiveTintColor: "white",
         tabBarStyle: {
           position: "absolute", // Décolle la TabBar
-          bottom: 15, // Décale vers le haut
+          bottom: 13, // Décale vers le haut
           left: 10, // Décale vers la gauche
           right: 10, // Décale vers la droite
-          borderRadius: 15, // Bordures arrondies
-          backgroundColor: "tomato", // Couleur de fond
+          borderRadius: 35, // Bordures arrondies
+          backgroundColor: "rgba(128, 128, 128, 0.9)", // Couleur de fond
           elevation: 10, // Ajoute une ombre
           shadowColor: "#000", // Couleur de l'ombre
           shadowOffset: {
