@@ -5,18 +5,20 @@ import {
   ScrollView,
   Image,
   ActivityIndicator,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import Icon from "@expo/vector-icons/Ionicons";
 import Pub from "../components/Pub";
-
+import { useNavigation } from "@react-navigation/native";
 const restaurantsData = [
   {
     name: "Pizza",
     image: require("../assets/images/pizza.jpg"),
     // description: "Delicious wood-fired",
-    location: "Medina Coura",
+    location: "Medina",
     distance: "1.2 km",
+    price: "3.000 FCFA",
   },
   {
     name: "burger",
@@ -24,6 +26,7 @@ const restaurantsData = [
     // description: "Juicy burgers with a variety of toppings to choose from.",
     location: "Yirimadjo",
     distance: "2.5 km",
+    price: "3.000 FCFA",
   },
   {
     name: "Crepe",
@@ -31,6 +34,7 @@ const restaurantsData = [
     // description: "Fresh sushi rolls ",
     location: "Niarela",
     distance: "3.8 km",
+    price: "3.000 FCFA",
   },
   {
     name: "Ice Cream",
@@ -38,6 +42,7 @@ const restaurantsData = [
     // description: "Healthy salads with fresh ",
     location: "Bosola",
     distance: "1.8 km",
+    price: "3.000 FCFA",
   },
 ];
 
@@ -46,6 +51,7 @@ const height_proportion = "90%";
 const HomeMain = () => {
   const [restaurants, setRestaurants] = useState(restaurantsData); // Données initiales
   const [loading, setLoading] = useState(false); // Gérer l'état de chargement
+  const navigation = useNavigation();
 
   // Fonction pour simuler le chargement de plus de données
   const loadMoreRestaurants = () => {
@@ -59,6 +65,7 @@ const HomeMain = () => {
             // description: "New delicious food.",
             location: "Kalaban Coro",
             distance: "2.0 km",
+            price: "3.000 FCFA",
           },
           {
             name: "New Restaurant 2",
@@ -66,6 +73,7 @@ const HomeMain = () => {
             // description: "Another great place to eat.",
             location: "ACI 2000",
             distance: "1.5 km",
+            price: "3.000 FCFA",
           },
         ];
         setRestaurants([...restaurants, ...newRestaurants]); // Ajouter les nouvelles données
@@ -84,6 +92,9 @@ const HomeMain = () => {
       loadMoreRestaurants(); // Charger plus de restaurants
     }
   };
+  const goToOrderScreen = (restaurant) => {
+    navigation.navigate("OrderScreen", { restaurant }); // Naviguer vers OrderScreen en passant les détails du restaurant
+  };
 
   return (
     <ScrollView
@@ -94,30 +105,40 @@ const HomeMain = () => {
       style={styles.scrollView}
     >
       <Pub />
+
       <View style={styles.container}>
         {/* Boucle pour afficher les restaurants 2 par 2 */}
         {restaurants.map((restaurant, index) => (
           // Afficher un restaurant sur deux dans une même ligne
-          <View key={index} style={styles.restaurantCard}>
+          <TouchableOpacity
+            onPress={() => goToOrderScreen(restaurant)}
+            key={index}
+            style={styles.restaurantCard}
+          >
             <Image
-              source={require("../assets/images/pizza.jpg")}
+              source={restaurant.image}
               // source={{ uri: restaurant.image }} // Si tu veux charger des images depuis une URL
               style={styles.restaurantImage}
             />
-            <View style={styles.restaurantInfo}>
-              <Text style={styles.restaurantName}>{restaurant.name}</Text>
-              {/* <Text style={styles.restaurantDescription}>
+            <View style={styles.restaurantInfos}>
+              <View style={styles.restaurantInfo}>
+                <Text style={styles.restaurantName}>{restaurant.name}</Text>
+                {/* <Text style={styles.restaurantDescription}>
                 {restaurant.description}
               </Text> */}
-              <Text style={styles.restaurantLocation}>
-                Lieu: {restaurant.location}
-              </Text>
-              <View style={styles.iconRow}>
-                <Icon name="walk" size={20} color="#555" />
-                <Text style={styles.iconText}>{restaurant.distance}</Text>
+                <Text style={styles.restaurantLocation}>
+                  Lieu: {restaurant.location}
+                </Text>
+                <View style={styles.iconRow}>
+                  <Icon name="walk" size={20} color="#555" />
+                  <Text style={styles.iconText}>{restaurant.distance}</Text>
+                </View>
+              </View>
+              <View>
+                <Text style={styles.price}>{restaurant.price}</Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
 
@@ -177,6 +198,12 @@ const styles = StyleSheet.create({
     padding: 10,
     justifyContent: "center",
   },
+  restaurantInfos: {
+    // padding: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   restaurantName: {
     fontSize: 18,
     fontWeight: "bold",
@@ -189,6 +216,12 @@ const styles = StyleSheet.create({
   restaurantLocation: {
     fontSize: 12,
     color: "#777",
+  },
+  price: {
+    fontSize: 12,
+    color: "red",
+    fontSize: 16,
+    fontWeight: "bold",
   },
   iconRow: {
     flexDirection: "row",

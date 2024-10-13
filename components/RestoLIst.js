@@ -14,28 +14,28 @@ import Icon from "@expo/vector-icons/Ionicons";
 const restaurantsData = [
   {
     name: "Ryan",
-    image: "https://example.com/pizza-palace.jpg",
+    image: require("../assets/images/ryan.jpg"),
     description: "Delicious wood-fired pizza with fresh ingredients.",
-    location: "Medina Coura",
+    location: "Medina",
     distance: "1.2 km",
   },
   {
     name: "Campement",
-    image: "https://example.com/burger-world.jpg",
+    image: require("../assets/images/camp.jpg"),
     description: "Juicy burgers with a variety of toppings to choose from.",
     location: "Yirimadjo",
     distance: "2.5 km",
   },
   {
     name: "Adonis",
-    image: "https://example.com/sushi-paradise.jpg",
+    image: require("../assets/images/pizza.jpg"),
     description: "Fresh sushi rolls and sashimi prepared to perfection.",
     location: "Niarela",
     distance: "3.8 km",
   },
   {
     name: "Ice Cream",
-    image: "https://example.com/salad-garden.jpg",
+    image: require("../assets/images/pizza.jpg"),
     description: "Healthy salads with fresh vegetables and homemade dressings.",
     location: "Bosola",
     distance: "1.8 km",
@@ -56,14 +56,14 @@ const RestoLIst = () => {
         const newRestaurants = [
           {
             name: "New Restaurant 1",
-            image: "https://example.com/new-restaurant-1.jpg",
+            image: require("../assets/images/images.jpg"),
             description: "New delicious food.",
             location: "Kalaban Coro",
             distance: "2.0 km",
           },
           {
             name: "New Restaurant 2",
-            image: "https://example.com/new-restaurant-2.jpg",
+            image: require("../assets/images/images.jpg"),
             description: "Another great place to eat.",
             location: "ACI 2000",
             distance: "1.5 km",
@@ -96,11 +96,7 @@ const RestoLIst = () => {
     >
       {restaurants.map((restaurant, index) => (
         <View key={index} style={styles.restaurantCard}>
-          <Image
-            source={require("../assets/images/pizza.jpg")}
-            // source={{ uri: restaurant.image }}
-            style={styles.restaurantImage}
-          />
+          <Image source={restaurant.image} style={styles.restaurantImage} />
           <View style={styles.restaurantInfo}>
             <Text style={styles.restaurantName}>{restaurant.name}</Text>
             <Text style={styles.restaurantDescription}>
