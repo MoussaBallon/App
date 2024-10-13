@@ -13,7 +13,7 @@ import { Header } from "react-native/Libraries/NewAppScreen";
 import RestoLIst from "../components/RestoLIst";
 import HomeMain from "../components/HomeMain";
 import SeparationLine from "../components/SeparationLine";
-
+import Filtre from "../components/Filtre";
 const HomeSreen = () => {
   const categories = [
     { name: "Locale", image: require("../assets/images/rice.png") },
@@ -35,6 +35,8 @@ const HomeSreen = () => {
           categories={categories}
           onCategoryPress={handleCategoryPress}
         />
+        <SeparationLine style={styles.sep} />
+        <Filtre />
         <SeparationLine style={styles.sep} />
       </View>
 

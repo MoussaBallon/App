@@ -12,29 +12,29 @@ import Pub from "../components/Pub";
 
 const restaurantsData = [
   {
-    name: "Ryan",
-    image: "https://example.com/pizza-palace.jpg",
+    name: "Pizza",
+    image: require("../assets/images/pizza.jpg"),
     // description: "Delicious wood-fired",
     location: "Medina Coura",
     distance: "1.2 km",
   },
   {
-    name: "Campement",
-    image: "https://example.com/burger-world.jpg",
+    name: "burger",
+    image: require("../assets/images/images.jpg"),
     // description: "Juicy burgers with a variety of toppings to choose from.",
     location: "Yirimadjo",
     distance: "2.5 km",
   },
   {
-    name: "Adonis",
-    image: "https://example.com/sushi-paradise.jpg",
+    name: "Crepe",
+    image: require("../assets/images/crepe.jpeg"),
     // description: "Fresh sushi rolls ",
     location: "Niarela",
     distance: "3.8 km",
   },
   {
     name: "Ice Cream",
-    image: "https://example.com/salad-garden.jpg",
+    image: require("../assets/images/cream.jpg"),
     // description: "Healthy salads with fresh ",
     location: "Bosola",
     distance: "1.8 km",
@@ -55,14 +55,14 @@ const HomeMain = () => {
         const newRestaurants = [
           {
             name: "New Restaurant 1",
-            image: "https://example.com/new-restaurant-1.jpg",
+            image: require("../assets/images/crepe.jpeg"),
             // description: "New delicious food.",
             location: "Kalaban Coro",
             distance: "2.0 km",
           },
           {
             name: "New Restaurant 2",
-            image: "https://example.com/new-restaurant-2.jpg",
+            image: require("../assets/images/crepe.jpeg"),
             // description: "Another great place to eat.",
             location: "ACI 2000",
             distance: "1.5 km",
@@ -141,12 +141,8 @@ const styles = StyleSheet.create({
     height: height_proportion,
   },
   container: {
-    flexDirection: "row",
-    flexWrap: "wrap", // Permet de retourner à la ligne après 2 éléments
-    justifyContent: "flex-start", // Espace entre les éléments
-    // marginLeft: 20,
     position: "relative",
-    left: 20,
+    // left: 20,
   },
 
   footerSpace: {
@@ -157,24 +153,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   restaurantCard: {
-    width: "38%",
+    width: "96%",
     backgroundColor: "#fff",
     borderRadius: 10,
     marginBottom: 20,
-    marginRight: "10%",
+    // marginRight: "9%",
     minHeight: 50,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 3,
-    marginHorizontal: 4,
+    marginHorizontal: "auto",
   },
   restaurantImage: {
     width: "100%",
-    height: 70,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    height: 150,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 60,
   },
   restaurantInfo: {
     padding: 10,

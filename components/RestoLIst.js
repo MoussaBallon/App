@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+    borderBottomLeftRadius: 90,
   },
   restaurantInfo: {
     padding: 10,

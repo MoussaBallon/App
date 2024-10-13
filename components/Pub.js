@@ -38,9 +38,10 @@ const styles = StyleSheet.create({
   },
   man: {
     width: 110,
-    height: 98,
+    height: 100,
     position: "relative",
     left: 250,
+    top: -25,
   },
   //   text de pub
   txt: {

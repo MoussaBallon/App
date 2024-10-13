@@ -11,6 +11,7 @@ import Tete from "../components/Tete";
 import Icon from "react-native-vector-icons/Ionicons";
 import RestoLIst from "../components/RestoLIst";
 import Categories from "../components/Categories";
+import Filtre from "../components/Filtre";
 
 const categories = [
   { name: "Locale", image: require("../assets/images/rice.png") },
@@ -39,6 +40,7 @@ const RestaurantSreen = () => {
           categories={categories}
           onCategoryPress={handleCategoryPress}
         />
+        <Filtre />
       </View>
       <RestoLIst />
     </View>
