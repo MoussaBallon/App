@@ -72,6 +72,9 @@ const DishDetailScreen = () => {
           </View>
           <Text style={styles.price}>{dish.price}</Text>
           <Text style={styles.description}>{dish.description}</Text>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.nbr1}>Ajouter au Panier</Text>
+          </TouchableOpacity>
         </View>
       ))}
     </View>
@@ -150,7 +153,7 @@ const styles = StyleSheet.create({
   },
   distance: {
     fontSize: 14,
-    color: "#555",
+    color: "black",
     marginTop: 8,
     position: "relative",
     top: 80,
@@ -175,8 +178,24 @@ const styles = StyleSheet.create({
   },
   nbr: {
     color: "white",
-    fontWeight: "bold",
+    fontWeight: "semi-bold",
     fontSize: 25,
+  },
+  nbr1: {
+    color: "white",
+    fontWeight: "semi-bold",
+    fontSize: 18,
+  },
+  // styling the add to card part
+  button: {
+    backgroundColor: "red", // Ajuste ici la couleur
+    padding: 20,
+    width: 350,
+    borderRadius: 30,
+    position: "relative",
+    top: 170,
+    marginHorizontal: "auto",
+    alignItems: "center",
   },
 });
 
